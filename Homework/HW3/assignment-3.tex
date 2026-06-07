@@ -1,0 +1,189 @@
+﻿\documentclass{homework}
+
+\name{Student Name} % Replace (Student Name) with your name.
+\id{}
+\course{Seminars on Quantum Computing}
+\hwnum{3}
+\usepackage{tikz}
+
+%\hwname{(Name)}          % Uncomment and replace (Name) with the type of the
+                          % homework (e.g, Assignment, Problem Set, etc.) if you
+                          % don't want the document to be labeled as "Homework."
+%\problemname{(Name)}     % Uncomment and replace (Name) with the desired label
+                          % for problems created with the problem environment.
+%\solutionname{(Name)}    % Uncomment and replace (Name) with the desired label
+                          % for solutions created with the solution environment.
+
+% Load any other packages you need here.
+
+\begin{document}
+
+In this problem set, the following notations are used
+
+\begin{equation*}
+  \sigma_{x} =
+  \begin{pmatrix}
+    0 & 1\\ 1 & 0
+  \end{pmatrix},\quad
+  \sigma_{y} =
+  \begin{pmatrix}
+    0 & -i\\
+    i & 0
+  \end{pmatrix},\quad
+  \sigma_{z} =
+  \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+  \end{pmatrix},\quad
+  \ket{+} = \frac{\ket{0} + \ket{1}}{\sqrt{2}}.
+\end{equation*}
+
+\begin{problem}
+  Let $\rho$ be the density matrix of a qubit and let
+  $U_{a, b} = \sigma_{z}^{a}\sigma_{x}^{b}$.
+  The one-time pad $\mathrm{OTP}_{a,b}(\rho)$ with keys $a, b\in \{0,1\}$ is
+  defined to be
+  \begin{equation*}
+    \mathrm{OTP}_{a, b}(\rho) = U_{a, b} \rho U_{a, b}^{\dagger}.
+  \end{equation*}
+
+  \begin{parts}
+    \part\label{1.a} Prove that for any qubit state $\rho$,
+    \begin{equation*}
+      \E_{a, b} \mathrm{OTP}_{a, b}(\rho) = \frac{I}{2}.
+    \end{equation*}
+
+    \part\label{1.b} It is possible to do interesting computation on the state
+    $\rho$ protected by the one-time pad without decoding.
+    Show that if we apply an $X$ gate on $\mathrm{OTP}_{a, b}(\rho)$, we get
+    $\mathrm{OTP}_{a, b}(X \rho X)$.
+
+    \part\label{1.c} Show that if we apply $H$ on $\mathrm{OTP}_{a, b}(\rho)$ we obtain the
+    one-time pad state $\mathrm{OTP}_{b, a}(H\rho H)$.
+    Notice that the value of $a, b$ are swapped in this case!
+  \end{parts}
+\end{problem}
+
+\begin{solution}
+
+  \ref{1.a} % chktex 2
+  Write the solution here.
+
+  \ref{1.b} % chktex 2
+
+  \ref{1.c} % chktex 2
+
+\end{solution}
+
+\begin{problem}
+  Assume that state is either $\ket{\psi_{0}}$ or $\ket{\psi_{1}}$ with equal
+  probability and $\abs{\langle \psi_{0} | \psi_{1} \rangle} = s > 0$.
+  Design a positive-operator valued measure (POVM) $\{M_{0}, M_{1}, M_{*}\}$
+  with three outcomes $0$, ${1}$, and $*$ to distinguish the state such that
+  \begin{enumerate}
+    \item if the outcome is $0$, the state must be $\ket{\psi_{0}}$,
+    \item if the outcome is $1$, the state must be $\ket{\psi_{1}}$,
+    \item the probability of having $*$ as the outcome is the smallest possible.
+          Note that in this case, the measurement does not tell us whether the
+          state is $\ket{\psi_{0}}$ or $\ket{\psi_{1}}$, and it's allowed to
+          answer ``I don't know''.
+          So the goal here is to minimize the probability of outputting an
+          inconclusive answer.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+  Let $\rho$ be a two-qubit state.
+  Prove that the process of (1) applying a CNOT gate using the first qubit as
+  the control and the second qubit as the target and (2) measuring the second
+  qubit in $Z$ basis is the same as measuring the state $\rho$ directly using
+  observable $Z\otimes Z$.
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+% \begin{problem}
+%   Recall that for qubit-qubit entangled states, the PPT condition is a
+%   sufficient and necessary condition for separability.
+%   Use the PPT condition to compute the value of the smallest positive real
+%   number $p$ such that
+%   \begin{equation*}
+%     \rho_{p} = p \frac{I}{4} + (1-p)\ket{\beta_{00}}\bra{\beta_{00}}
+%   \end{equation*}
+%   is a separable state.
+% \end{problem}
+
+% \begin{solution}
+
+% \end{solution}
+
+\begin{problem}
+  In this problem, we consider a game between a quantum computer and a classical
+  referee.
+  Let $f : {\{0,1\}}^n \to {\{0,1\}}^{n-1}$ be a $2$-to-$1$ function, meaning
+  that every $y \in {\{0,1\}}^{n-1}$ has exactly two distinct preimages.
+  Suppose there is an efficient (with a polynomial number of gates) quantum
+  circuit to compute $f$, but no efficient circuit that can produce from given
+  $x \in {\{0,1\}}^{n}$ an $x' \ne x$ such that $f(x') = f(x)$.
+  Show that, like in the Simon's algorithm, the quantum computer can efficiently
+  generate a uniformly random $y$ and an associated $n$-qubit state
+  $\ket{\phi_{y}}$.
+  The quantum computer sends the string $y$ to the classical referee and keeps
+  $\ket{\phi_{y}}$.
+  Next the referee flips a coin and asks the quantum computer to perform one of
+  the following two tasks.
+  \begin{enumerate}
+    \item (Task 0).
+          When asked, efficiently generate an $x$ such that $f(x) = y$; and
+    \item (Task 1).
+          When asked, efficiently sample uniformly from the set
+          $\{a \in {\{0,1\}}^{n} \mid a \cdot (x \oplus x') = 0 \mod 2\}$, where
+          $x, x'$ are the two preimages of $y$ under $f$.
+  \end{enumerate}
+  Show that the quantum computer can always succeed.
+
+  \noindent
+  \emph{(Note: This game is used in a proof of quantumness protocol as classical
+  computers cannot always succeed.)}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+  Let \(U\) be an \(n\)-qubit unitary operator.
+  Consider the input state 
+  \begin{equation*}
+    \rho_{\mathrm{in}} = \ket{0}\bra{0} \otimes \frac{I}{2^n}.
+  \end{equation*}
+  Apply the following operations to the state:
+  \begin{enumerate}
+    \item Apply a Hadamard gate \(H\) to the first qubit.
+    \item Apply a controlled-\(U\) gate, where the first qubit is the control
+          qubit.
+    \item Apply another Hadamard gate \(H\) to the first qubit.
+    \item Measure the first qubit in the computational basis.
+  \end{enumerate}
+  Define success as obtaining the measurement outcome \(0\) on the first qubit.
+  Show that the success probability is
+  \begin{equation*}
+    P(0) = \frac{1}{2}
+    \left(
+      1+ \operatorname{Re} \left[
+        \frac{\operatorname{Tr}(U)}{2^n} \right]
+    \right).
+  \end{equation*}
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\end{document}
