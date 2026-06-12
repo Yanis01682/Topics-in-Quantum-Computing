@@ -39,3 +39,15 @@ Chen Jiamu will present the last eight slides, covering the detailed SABRE mecha
 课堂展示环节中，张芝源负责展示 PPT 前 8 页，内容包括问题背景、mapping 定义、主要难点以及 SABRE 的整体思路。
 
 陈家睦负责展示 PPT 后 8 页，内容包括 SABRE 的具体机制、实验评价、局限性、总结与后续方向。
+
+---
+
+# AI Tool Usage Statement
+
+This project used generative AI tools to assist with literature organization, report structure planning, and language polishing. All related content was manually checked, revised, and integrated according to the original paper and course requirements. The final analysis and presentation were confirmed by the group members.
+
+---
+
+# AI 工具使用说明
+
+本项目使用生成式 AI 工具辅助完成资料梳理、报告结构整理和文字润色。相关内容均结合原论文和课程要求进行了人工核对、修改与整合，最终分析和表述由小组成员确认完成。
