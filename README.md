@@ -2,6 +2,12 @@
 
 This repository contains course-related materials for the 2026 Spring offering of **Topics in Quantum Computing / 量子计算研讨课** at Tsinghua University.
 
+## 中文说明
+
+这是 2026 春清华大学 **量子计算研讨课** 课程相关资料整理。
+
+仓库包含课程课件、作业材料、期末项目报告与展示，以及作为子模块保留的外部课程项目。期末项目围绕 SABRE 量子比特映射算法展开。
+
 ## Contents
 
 | Directory | Description |
